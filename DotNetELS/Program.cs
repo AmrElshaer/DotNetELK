@@ -1,3 +1,4 @@
+using DotNetELS.Extensions;
 using Serilog;
 using Serilog.Sinks.Elasticsearch;
 using System.Reflection;
@@ -13,7 +14,7 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-
+builder.Services.AddElasticsearch(builder.Configuration);
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
